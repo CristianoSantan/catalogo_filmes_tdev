@@ -9,7 +9,7 @@
   <%= link_to "Editar", edit_director_path(@director) %> |
   <%= link_to "Voltar", directors_path %>
 
-  <%= button_to "Deletar", @director, method: :delete %>
+  <%= button_to "Deletar", @director, method: :delete, class: "btn btn-danger" %>
 </div>
 
 <h3>Filmes Produzidos</h3>

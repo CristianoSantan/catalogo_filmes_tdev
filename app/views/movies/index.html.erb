@@ -5,29 +5,29 @@
 <h1>Fimes</h1>
 <%= link_to "Novo filme", new_movie_path %>
 
-<div id="movies">
+<div id="movies" class="row row-cols row-cols-md-3 g-4">
   <% @movies.each do |movie| %>
-    <img src=<%= movie.image %> alt="" width="300" height="200" title="Paisagem">
-    <div>
-      <p>
-        <strong>Título:</strong>
-        <%= movie.title %>
-      </p>
-      <p>
-        <strong>Ano de lançamento:</strong>
-        <%= movie.year_release %>
-      </p>
-       <p>
-        <% if movie.year_release <= Time.now.year %>
-          <span style="color: green;">Já lançado</span>
-        <% else %>
-          <span style="color: red;">A ser lançado</span>
-        <% end %>
-      </p>
-      
-      <p>
-        <%= link_to "Mostrar", movie %>
-      </p>
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <% if movie.poster_image.attached? %>
+        <%= image_tag movie.poster_image, alt: "", title: "Paisagem" %>
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= movie.title %></h5>
+        <p class="card-text">
+          <strong>Ano de lançamento:</strong>
+          <%= movie.year_release %>
+        </p>
+        <p>
+          <% if movie.year_release <= Time.now.year %>
+            <span style="color: green;">Já lançado</span>
+          <% else %>
+            <span style="color: red;">A ser lançado</span>
+          <% end %>
+        </p>
+        <%= link_to "Mostrar", movie, class: "btn btn-primary" %>
+      </div>
     </div>
+  </div>
   <% end %>
 </div>

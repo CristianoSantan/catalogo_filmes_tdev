@@ -1,4 +1,4 @@
-<%= form_with(model: movie) do |form| %>
+<%= form_with(model: movie, local: true) do |form| %>
   <% if movie.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
@@ -37,8 +37,9 @@
   </div>
 
   <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.text_field :image %>
+    <%= form.label :poster_image, style: "display: block" %>
+    <%= form.file_field :poster_image %> 
+
   </div>
 
   <div>

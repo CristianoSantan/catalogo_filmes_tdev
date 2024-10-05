@@ -34,7 +34,9 @@
 
   <p>
     <strong>Imagem:</strong>
-    <img src=<%= movie.image %> alt="" width="300" height="200" title="Paisagem">
+    <% if movie.poster_image.attached? %>
+      <%= image_tag movie.poster_image, alt: "", title: "Paisagem"%>
+    <% end %>
   </p>
 
   <p>
