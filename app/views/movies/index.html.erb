@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Filmes" %>
+
+<h1>Fimes</h1>
+<%= link_to "Novo filme", new_movie_path %>
+
+<div id="movies">
+  <% @movies.each do |movie| %>
+    <img src=<%= movie.image %> alt="" width="300" height="200" title="Paisagem">
+    <div>
+      <p>
+        <strong>Título:</strong>
+        <%= movie.title %>
+      </p>
+      <p>
+        <strong>Ano de lançamento:</strong>
+        <%= movie.year_release %>
+      </p>
+       <p>
+        <% if movie.year_release <= Time.now.year %>
+          <span style="color: green;">Já lançado</span>
+        <% else %>
+          <span style="color: red;">A ser lançado</span>
+        <% end %>
+      </p>
+      
+      <p>
+        <%= link_to "Mostrar", movie %>
+      </p>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<% content_for :title, "Editar diretor" %>
+
+<h1>Editar diretor</h1>
+
+<%= render "form", director: @director %>
+
+<br>
+
+<div>
+  <%= link_to "Mostrar", @director %> |
+  <%= link_to "Voltar", directors_path %>
+</div>

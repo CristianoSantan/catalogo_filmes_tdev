@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @gender.name %>
+</p>
+
+<div>
+  <%= link_to "Editar gênero", edit_gender_path(@gender) %> |
+  <%= link_to "Voltar", genders_path %>
+
+  <%= button_to "Deletar gênero", @gender, method: :delete %>
+</div>
+
+<ul>
+<% @movies.each do |movie| %>
+  <li>
+    <%= link_to movie.title, movie %>
+  </li>
+  <% end %>
+</ul>

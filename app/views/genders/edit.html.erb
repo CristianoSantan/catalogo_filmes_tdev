@@ -1,0 +1,12 @@
+<% content_for :title, "Editar gênero" %>
+
+<h1>Editar gênero</h1>
+
+<%= render "form", gender: @gender %>
+
+<br>
+
+<div>
+  <%= link_to "Mostrar gênero", @gender %> |
+  <%= link_to "Voltar para gêneros", genders_path %>
+</div>

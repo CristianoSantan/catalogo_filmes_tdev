@@ -1,0 +1,66 @@
+<%= form_with(model: movie) do |form| %>
+  <% if movie.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+        <% movie.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :year_release, style: "display: block" %>
+    <%= form.number_field :year_release %>
+  </div>
+
+  <div>
+    <%= form.label :synopsis, style: "display: block" %>
+    <%= form.text_area :synopsis %>
+  </div>
+
+  <div>
+    <%= form.label :country_origin, style: "display: block" %>
+    <%= form.text_field :country_origin %>
+  </div>
+
+  <div>
+    <%= form.label :duration, style: "display: block" %>
+    <%= form.number_field :duration %>
+  </div>
+
+  <div>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div>
+    <%= form.label :director_id, style: "display: block" %>
+    <%= form.collection_select :director_id, Director.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.label :gender_id, style: "display: block" %>
+    <%= form.collection_select :gender_id, Gender.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.label :status, "Rascunho" %>
+    <%= form.radio_button :status, "draft" %>
+    <%= form.label :status, "Sim", value: "draft" %>
+    
+    <%= form.radio_button :status, "published", checked: true %>
+    <%= form.label :status, "Não", value: "published" %>
+  </div>
+  <br/>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

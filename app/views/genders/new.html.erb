@@ -1,0 +1,11 @@
+<% content_for :title, "Novo gênero" %>
+
+<h1>Novo gênero</h1>
+
+<%= render "form", gender: @gender %>
+
+<br>
+
+<div>
+  <%= link_to "Voltar", genders_path %>
+</div>

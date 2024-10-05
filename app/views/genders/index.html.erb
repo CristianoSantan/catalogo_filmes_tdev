@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Gêneros" %>
+
+<h1>Gêneros</h1>
+<%= link_to "Novo gênero", new_gender_path %>
+
+<ul id="genders">
+  <% @genders.each do |gender| %>
+    <li>
+      <%= link_to gender.name, gender %>
+    </li>
+  <% end %>
+</ul>
+

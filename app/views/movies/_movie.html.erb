@@ -1,0 +1,55 @@
+<div id="<%= dom_id movie %>">
+  <p>
+    <strong>Título:</strong>
+    <%= movie.title %>
+  </p>
+
+  <p>
+    <strong>Ano de lançamento:</strong>
+    <%= movie.year_release %>
+  </p>
+
+  <p>
+    <% if movie.year_release <= Time.now.year %>
+      <span style="color: green;">Já lançado</span>
+    <% else %>
+      <span style="color: red;">A ser lançado</span>
+    <% end %>
+  </p>
+
+  <p>
+    <strong>Sinopse:</strong>
+    <%= movie.synopsis %>
+  </p>
+
+  <p>
+    <strong>País de origem:</strong>
+    <%= movie.country_origin %>
+  </p>
+
+  <p>
+    <strong>Duração:</strong>
+    <%= movie.duration %>
+  </p>
+
+  <p>
+    <strong>Imagem:</strong>
+    <img src=<%= movie.image %> alt="" width="300" height="200" title="Paisagem">
+  </p>
+
+  <p>
+    <strong>Diretor:</strong>
+    <%= movie.director.name %>
+  </p>
+
+  <p>
+    <strong>Gênero:</strong>
+    <%= movie.gender.name %>
+  </p>
+
+  <p>
+    <strong>Publicado:</strong>
+    <%= movie.status %>
+  </p>
+
+</div>

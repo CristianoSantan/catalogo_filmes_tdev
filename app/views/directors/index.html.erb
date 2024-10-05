@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Diretores" %>
+
+<h1>Directors</h1>
+
+<%= link_to "Novo diretor", new_director_path %>
+
+<div id="directors">
+  <% @directors.each do |director| %>
+    <p>
+      <%= link_to director.name, director %>
+    </p>
+  <% end %>
+</div>
+
